@@ -156,6 +156,7 @@ class SubscribeSerializer(CustomUserSerializer):
         serializer = ShortRecipeSerializer(recipes, many=True, read_only=True)
         return serializer.data
 
+
 class RecipeSerializer(serializers.ModelSerializer):
     tags = PrimaryKeyRelatedField(queryset=Tag.objects.all(),
                                   many=True)
