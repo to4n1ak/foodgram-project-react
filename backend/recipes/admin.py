@@ -4,7 +4,6 @@ from .models import (Favourite, Ingredient, IngredientAmount, Recipe,
                      ShoppingCart, Tag)
 
 
-
 class IngredientAmountAdmin(admin.StackedInline):
     model = IngredientAmount
     autocomplete_fields = ('ingredient',)
