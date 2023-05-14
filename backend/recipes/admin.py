@@ -38,6 +38,13 @@ class TagAdmin(admin.ModelAdmin):
     empty_value_display = '-нет тагов-'
 
 
+@admin.register(Ingredient)
+class IngredientAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'measurement_unit',)
+    list_filter = ('name',)
+    empty_value_display = '-нет ингредиентов-'
+
+
 @admin.register(ShoppingCart)
 class ShoppingCartAdmin(admin.ModelAdmin):
     list_display = ('user', 'recipe',)
@@ -48,9 +55,3 @@ class ShoppingCartAdmin(admin.ModelAdmin):
 class FavouriteAdmin(admin.ModelAdmin):
     list_display = ('user', 'recipe',)
     empty_value_display = '-нет избранного-'
-
-
-@admin.register(IngredientAmount)
-class IngredientInRecipe(admin.ModelAdmin):
-    list_display = ('recipe', 'ingredient', 'amount',)
-    empty_value_display = '-нет такого-'
